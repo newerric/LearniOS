@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func showAnswer() {
+    private func showAnswer() {
         if yourFortune.isHidden == true {
             // show me the answer
             // 1. make a random number 1~6
@@ -47,16 +47,13 @@ class ViewController: UIViewController {
             
             // 2. change image
             yourFortune.image =  UIImage(named: "\(answer)")
-            yourFortune.isHidden = false
             
             // 3. sound
             AudioServicesPlaySystemSound(1000)
-            
-            
-        } else {
-            // hide image
-            yourFortune.isHidden = true
         }
+        
+        // 改變為相反狀態
+        yourFortune.isHidden = !yourFortune.isHidden
     }
 
 
