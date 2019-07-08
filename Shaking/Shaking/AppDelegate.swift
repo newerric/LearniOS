@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ThreeDTouch
+//  Shaking
 //
-//  Created by mikewang on 2019/7/8.
+//  Created by mikewang on 2019/7/9.
 //  Copyright © 2019 mike. All rights reserved.
 //
 
@@ -39,19 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        if let tabBar = self.window?.rootViewController as? UITabBarController {
-            if shortcutItem.type == "gotoFirst" {
-                tabBar.selectedIndex = 0                
-            } else if shortcutItem.type == "gotoSecond" {
-                tabBar.selectedIndex = 1
-            } else if shortcutItem.type == "gotothird" {
-                let lightred = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "lightred")
-                tabBar.present(lightred, animated: false, completion: nil)
-            }
-        }
     }
 
 
