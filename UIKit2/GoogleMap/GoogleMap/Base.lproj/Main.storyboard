@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P0A-xE-Bww">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoogleMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uh0-0X-Le3" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Uh0-0X-Le3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Cj-yr-VuD"/>
+                            <constraint firstAttribute="bottom" secondItem="Uh0-0X-Le3" secondAttribute="bottom" id="KiR-sA-qUP"/>
+                            <constraint firstItem="Uh0-0X-Le3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="RQi-B5-vQ5"/>
+                            <constraint firstItem="Uh0-0X-Le3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mcS-go-V3s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZQb-yM-RYY"/>
+                    <connections>
+                        <outlet property="mapView" destination="Uh0-0X-Le3" id="Anj-pe-FmF"/>
+                        <segue destination="WTK-su-2UU" kind="show" identifier="showPano" id="ZMh-9V-rM7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="128.57142857142856"/>
+        </scene>
+        <!--Pano View Controller-->
+        <scene sceneID="6jc-cC-kNc">
+            <objects>
+                <viewController id="WTK-su-2UU" customClass="PanoViewController" customModule="GoogleMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KK4-VQ-4Cf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgL-FS-jfX" customClass="GMSPanoramaView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="RgL-FS-jfX" secondAttribute="trailing" id="f2t-Rj-Jca"/>
+                            <constraint firstItem="RgL-FS-jfX" firstAttribute="top" secondItem="KK4-VQ-4Cf" secondAttribute="top" constant="44" id="jHV-KQ-xyc"/>
+                            <constraint firstItem="RgL-FS-jfX" firstAttribute="leading" secondItem="KK4-VQ-4Cf" secondAttribute="leading" id="sBG-wp-7sy"/>
+                            <constraint firstAttribute="bottom" secondItem="RgL-FS-jfX" secondAttribute="bottom" id="vnO-Rp-QbB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zxe-VZ-p3d"/>
+                    </view>
+                    <connections>
+                        <outlet property="panoView" destination="RgL-FS-jfX" id="2xn-mM-gcb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kam-PT-MSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797.1014492753625" y="128.57142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5bc-rL-o8V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P0A-xE-Bww" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xo3-4L-C8A">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rqq-6a-MCA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOa-3n-hTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+</document>
