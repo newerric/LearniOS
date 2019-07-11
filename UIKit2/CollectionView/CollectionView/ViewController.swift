@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var thisImageView: UIImageView!
+    
+    
+    @IBOutlet weak var container: UIView!
     @IBOutlet weak var myCollectionView: UICollectionView!
     let images = ["cat1","cat2","cat3","cat4","cat5","cat6","cat7","cat8","cat9","cat10","cat11","cat12","cat13","cat14","cat15"]
     
@@ -38,8 +42,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        thisImageView.image = UIImage(named: images[indexPath.row])
+    }
+    
+    // MARK: UICollectionView Delegate FlowLayout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (view.frame.width - 3) / 4
+        let width = (container.frame.width - 3) / 4
         return CGSize(width: width, height: width)
     }
     
